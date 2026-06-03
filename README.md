@@ -1,74 +1,166 @@
-E-Commerce Sales Analysis Using SQL & Excel
-Project Overview
+# E-Commerce Sales Analysis Using SQL & Excel
 
-This project analyzes e-commerce sales and customer data using SQL and Excel to uncover business insights, identify purchasing trends, and support data-driven decision making.
+## Project Overview
 
-The objective was to evaluate sales performance, customer behavior, category performance, and regional trends through data analysis and interactive dashboards.
+This project analyzes e-commerce sales and customer data using SQL and Excel to identify sales trends, customer purchasing patterns, and business performance metrics. The project demonstrates how data analytics can be used to support strategic decision-making and drive business growth.
 
-Business Problem
+---
 
-E-commerce businesses generate large volumes of transactional data. This project aims to answer key business questions such as:
+## Objectives
 
-Which product categories generate the highest revenue?
-What customer segments contribute most to sales?
-Which regions perform best?
-How do sales trends change over time?
-What insights can support business growth?
-Tools Used
-SQL
-Microsoft Excel
-Pivot Tables
-Data Visualization
-Dashboard Design
-Dataset
+- Analyze sales performance across product categories.
+- Understand customer purchasing behavior.
+- Evaluate regional business performance.
+- Identify profit-driving segments.
+- Create an interactive dashboard for business monitoring.
 
-The dataset contains:
+---
 
-Column
-Order ID
-Order Date
-Category
-Customer Type
-Region
-Sales
-Profit
-SQL Analysis
+## Tools & Technologies
 
-The following analyses were performed:
+- SQL
+- Microsoft Excel
+- Pivot Tables
+- Pivot Charts
+- Dashboard Design
+- Data Analysis
 
-Total Sales
+---
+
+## Dataset
+
+The dataset contains transactional sales records with the following fields:
+
+| Column Name | Description |
+|-------------|-------------|
+| Order_ID | Unique order identifier |
+| Order_Date | Date of purchase |
+| Category | Product category |
+| Customer_Type | New or Returning Customer |
+| Region | Sales region |
+| Sales | Revenue generated |
+| Profit | Profit earned |
+
+---
+
+## SQL Analysis Performed
+
+### Total Sales Analysis
+
+```sql
 SELECT SUM(Sales) AS Total_Sales
 FROM sales_data;
-Sales by Category
+```
+
+### Category Performance
+
+```sql
 SELECT Category,
        SUM(Sales) AS Category_Sales
 FROM sales_data
 GROUP BY Category
 ORDER BY Category_Sales DESC;
-Customer Analysis
+```
+
+### Customer Segmentation
+
+```sql
 SELECT Customer_Type,
        COUNT(*) AS Orders,
        SUM(Sales) AS Revenue
 FROM sales_data
 GROUP BY Customer_Type;
-Regional Performance
+```
+
+### Regional Performance
+
+```sql
 SELECT Region,
        SUM(Sales) AS Revenue,
        SUM(Profit) AS Profit
 FROM sales_data
-GROUP BY Region;
-Dashboard Metrics
+GROUP BY Region
+ORDER BY Revenue DESC;
+```
 
-The Excel dashboard tracks:
+### Monthly Sales Trend
 
-Total Revenue
-Category Performance
-Customer Segmentation
-Regional Performance
-Profit Analysis
-Key Insights
-Identified top-performing product categories.
-Evaluated revenue contribution by customer type.
-Compared regional sales performance.
-Highlighted opportunities for business growth.
-Created visual dashboards for executive reporting.
+```sql
+SELECT DATE_FORMAT(Order_Date,'%Y-%m') AS Month,
+       SUM(Sales) AS Monthly_Sales
+FROM sales_data
+GROUP BY Month
+ORDER BY Month;
+```
+
+---
+
+## Dashboard Features
+
+The Excel dashboard provides visual insights into:
+
+- Total Sales Performance
+- Sales by Category
+- Customer Type Distribution
+- Regional Performance Analysis
+- Profit Trends
+- Business KPIs
+
+---
+
+## Key Insights Generated
+
+- Identified top-performing product categories.
+- Analyzed revenue contribution by customer segments.
+- Evaluated regional sales performance.
+- Tracked sales trends over time.
+- Generated actionable recommendations for business growth.
+
+---
+
+## Repository Structure
+
+```
+Ecommerce-Sales-Analysis/
+│
+├── Ecommerce_Sales_Analysis_Dashboard.xlsx
+├── Ecommerce_Sales_Analysis_SQL_Queries.sql
+├── README.md
+└── images/
+```
+
+---
+
+## Business Impact
+
+This analysis enables businesses to:
+
+- Monitor sales performance effectively.
+- Improve category-level decision making.
+- Understand customer purchasing behavior.
+- Optimize marketing and promotional strategies.
+- Support data-driven business growth initiatives.
+
+---
+
+## Skills Demonstrated
+
+- SQL Querying
+- Data Cleaning
+- Data Analysis
+- Business Intelligence
+- Dashboard Development
+- Data Visualization
+- Problem Solving
+- Analytical Thinking
+
+---
+
+## Author
+
+### Abarna Subramanian
+
+
+GitHub: Add your GitHub profile link here
+
+---
