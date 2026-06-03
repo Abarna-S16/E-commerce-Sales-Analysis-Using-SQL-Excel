@@ -160,7 +160,4 @@ This analysis enables businesses to:
 
 ### Abarna Subramanian
 
-
-GitHub: Add your GitHub profile link here
-
 ---
